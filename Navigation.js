@@ -27,25 +27,25 @@ const Navigation = () => {
         <Stack.Screen 
           name="CadastroPlantacao" 
           component={CadastroPlantacao} 
-          options={{ headerShown: false }} // Sem cabeçalho padrão
+          options={{ title: "Cadastro do Plantio" }} 
         />
         {/* TELA CADASTRO MAQUINAS*/}
         <Stack.Screen 
           name="CadastroMaquinas" 
           component={CadastroMaquinas} 
-          options={{ headerShown: false }} // Sem cabeçalho padrão
+          options={{ title: "Cadastro das Maquinas" }} 
         />
         {/* TELA CADASTRO FUNCIONARIOS*/}
         <Stack.Screen 
           name="CadastroFuncionarios" 
           component={CadastroFuncionarios} 
-          options={{ headerShown: false }} // Sem cabeçalho padrão
+          options={{ title: "Cadastro de Funcionarios"  }} // Sem cabeçalho padrão
         />
         {/* TELA CADASTRO ESTOQUE*/}
         <Stack.Screen 
           name="CadastroEstoque" 
           component={CadastroEstoque} 
-          options={{ headerShown: false }} // Sem cabeçalho padrão
+          options={{ title: "Cadastro do Estoque"  }} // Sem cabeçalho padrão
         />
         {/* TELA GERENCIAR FINANCAS*/}
         <Stack.Screen 
