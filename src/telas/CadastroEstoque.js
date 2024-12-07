@@ -6,12 +6,13 @@ export default function CadastroEstoque({ navigation }) {
   // State para os campos do formulário
   const [produto, setProduto] = useState("");
   const [quantidade, setQuantidade] = useState("");
-  const [categoria, setCategoria] = useState("");
+  const [descricao, setDescricao] = useState("");
   const [dataAdicao, setDataAdicao] = useState("");
+  const [categoria, setCategoria] = useState("");
 
   // Função para verificar se todos os campos estão preenchidos
   const isFormValid = () => {
-    return produto && quantidade && categoria && dataAdicao;
+    return produto && quantidade && descricao && dataAdicao && categoria;
   };
 
   const handleSave = () => {
@@ -59,15 +60,15 @@ export default function CadastroEstoque({ navigation }) {
         />
       </View>
 
-      {/* Campo Categoria */}
+      {/* Campo Descrição */}
       <View style={styles.inputGroup}>
-        <Ionicons name="list" size={24} color="#4CAF50" style={styles.icon} />
+        <Ionicons name="document-text" size={24} color="#4CAF50" style={styles.icon} />
         <TextInput
           style={styles.input}
-          placeholder="Categoria"
+          placeholder="Descrição"
           placeholderTextColor="#aaa"
-          value={categoria}
-          onChangeText={setCategoria}
+          value={descricao}
+          onChangeText={setDescricao}
         />
       </View>
 
@@ -80,6 +81,18 @@ export default function CadastroEstoque({ navigation }) {
           placeholderTextColor="#aaa"
           value={dataAdicao}
           onChangeText={setDataAdicao}
+        />
+      </View>
+
+      {/* Campo Categoria */}
+      <View style={styles.inputGroup}>
+        <Ionicons name="list" size={24} color="#4CAF50" style={styles.icon} />
+        <TextInput
+          style={styles.input}
+          placeholder="Categoria"
+          placeholderTextColor="#aaa"
+          value={categoria}
+          onChangeText={setCategoria}
         />
       </View>
 

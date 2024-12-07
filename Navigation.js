@@ -10,6 +10,7 @@ import GerenciarFinancas from './src/telas/GerenciarFinancas';
 import Relatorios from './src/telas/Relatorios';
 import VizualizarPlantacoes from './src/telas/VizualizarPlantacoes';
 import VizualizarEstoque from './src/telas/VizualizarEstoque';
+import CadastroColheita from './src/telas/CadastroColheita';
 
 const Stack = createStackNavigator();
 
@@ -69,6 +70,12 @@ const Navigation = () => {
         <Stack.Screen 
           name="VizualizarEstoque" 
           component={VizualizarEstoque} 
+          options={{ headerShown: false }} // Sem cabeçalho padrão
+        />
+        {/* TELA Cadastar Colheita*/}
+        <Stack.Screen 
+          name="CadastroColheita" 
+          component={CadastroColheita} 
           options={{ headerShown: false }} // Sem cabeçalho padrão
         />
       </Stack.Navigator>

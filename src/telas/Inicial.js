@@ -69,29 +69,29 @@ export default function HomeScreen({ navigation }) {
         <View style={{ height: 20 }} /> 
 
         <View style={styles.quickActionsContainer}>
-          {/* Botao Cadastrar Estoque */}  
+          {/* Botao Cadastrar Colheita */}  
           <TouchableOpacity 
             style={styles.quickActionButton}
-            onPress = {() => navigation.navigate("CadastroEstoque")}
+            onPress = {() => navigation.navigate("CadastroColheita")}
           >
             <FontAwesome5 name="warehouse" size={24} color="#fff" />
-            <Text style={styles.quickActionText}>Cadastrar Estoque</Text>
-          {/* Botao Gerenciar Fincancas */}
+            <Text style={styles.quickActionText}>Cadastrar Colheita</Text>
           </TouchableOpacity>
+          {/* Botao Gerenciar Fincancas */}
           <TouchableOpacity
             style={styles.quickActionButton}
             onPress = {() => navigation.navigate("GerenciarFinancas")}
           >
             <FontAwesome5 name="money-check-alt" size={24} color="#fff" />
             <Text style={styles.quickActionText}>Gerenciar Finanças</Text>
-          {/* Botao Relatorios */}
           </TouchableOpacity>
+          {/* Botao Cadastrar Estoque */}
           <TouchableOpacity
             style={styles.quickActionButton}
-            onPress = {() => navigation.navigate("Relatorios")}
+            onPress = {() => navigation.navigate("CadastroEstoque")}
           >
             <FontAwesome5 name="calendar-alt" size={24} color="#fff" />
-            <Text style={styles.quickActionText}>Relatórios</Text>
+            <Text style={styles.quickActionText}>Cadastrar Estoque</Text>
           </TouchableOpacity>
         </View>
 
@@ -262,4 +262,3 @@ const styles = StyleSheet.create({
     fontWeight: "bold",
   },
 });
-

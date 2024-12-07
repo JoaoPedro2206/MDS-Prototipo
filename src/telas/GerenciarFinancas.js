@@ -10,8 +10,11 @@ export default function GerenciarFinancas({ navigation }) {
   const funcionarios = 10; // Quantidade de funcionários
   const gastoFuncionarios = 15000; // Gasto mensal estimado em R$
 
-  const produtosEstoque = 20; // Quantidade de produtos no estoque
-  const gastoEstoque = 8000; // Gasto mensal estimado com o estoque
+  const insumos = 25; // Quantidade de insumos
+  const gastoInsumos = 12000; // Gasto mensal estimado com insumos
+
+  const faturamentoMensal = 30000; // Faturamento mensal estimado em R$
+  const lucroMensal = faturamentoMensal - (gastoMaquinas + gastoFuncionarios + gastoInsumos); // Lucro mensal estimado
 
   return (
     <ScrollView contentContainerStyle={styles.container}>
@@ -27,8 +30,14 @@ export default function GerenciarFinancas({ navigation }) {
             <Text style={styles.editButtonText}>Editar</Text>
           </TouchableOpacity>
         </View>
-        <Text style={styles.cardText}>Quantidade: {maquinas}</Text>
-        <Text style={styles.cardText}>Gasto Mensal: R${gastoMaquinas.toFixed(2)}</Text>
+        <View style={styles.cardContent}>
+          <FontAwesome5 name="cogs" size={18} color="#4CAF50" />
+          <Text style={styles.cardText}>Quantidade: {maquinas}</Text>
+        </View>
+        <View style={styles.cardContent}>
+          <FontAwesome5 name="dollar-sign" size={18} color="#4CAF50" />
+          <Text style={styles.cardText}>Gasto Mensal: R${gastoMaquinas.toFixed(2)}</Text>
+        </View>
       </View>
 
       {/* Informações sobre Funcionários */}
@@ -41,18 +50,50 @@ export default function GerenciarFinancas({ navigation }) {
             <Text style={styles.editButtonText}>Editar</Text>
           </TouchableOpacity>
         </View>
-        <Text style={styles.cardText}>Quantidade: {funcionarios}</Text>
-        <Text style={styles.cardText}>Gasto Mensal: R${gastoFuncionarios.toFixed(2)}</Text>
+        <View style={styles.cardContent}>
+          <FontAwesome5 name="user-friends" size={18} color="#4CAF50" />
+          <Text style={styles.cardText}>Quantidade: {funcionarios}</Text>
+        </View>
+        <View style={styles.cardContent}>
+          <FontAwesome5 name="dollar-sign" size={18} color="#4CAF50" />
+          <Text style={styles.cardText}>Gasto Mensal: R${gastoFuncionarios.toFixed(2)}</Text>
+        </View>
       </View>
 
-      {/* Resumo do Estoque */}
+      {/* Informações sobre Gastos com Insumos */}
       <View style={styles.card}>
         <View style={styles.cardHeader}>
-          <FontAwesome5 name="warehouse" size={24} color="#4CAF50" />
-          <Text style={styles.cardTitle}>Estoque</Text>
+          <FontAwesome5 name="seedling" size={24} color="#4CAF50" />
+          <Text style={styles.cardTitle}>Gastos com Insumos</Text>
+          <TouchableOpacity style={styles.editButton}>
+            <FontAwesome5 name="edit" size={20} color="#fff" />
+            <Text style={styles.editButtonText}>Editar</Text>
+          </TouchableOpacity>
         </View>
-        <Text style={styles.cardText}>Quantidade de Produtos: {produtosEstoque}</Text>
-        <Text style={styles.cardText}>Gasto Mensal: R${gastoEstoque.toFixed(2)}</Text>
+        <View style={styles.cardContent}>
+          <FontAwesome5 name="box" size={18} color="#4CAF50" />
+          <Text style={styles.cardText}>Quantidade: {insumos}</Text>
+        </View>
+        <View style={styles.cardContent}>
+          <FontAwesome5 name="dollar-sign" size={18} color="#4CAF50" />
+          <Text style={styles.cardText}>Gasto Mensal: R${gastoInsumos.toFixed(2)}</Text>
+        </View>
+      </View>
+
+      {/* Informações Financeiras Gerais */}
+      <View style={styles.card}>
+        <View style={styles.cardHeader}>
+          <FontAwesome5 name="money-bill-wave" size={24} color="#4CAF50" />
+          <Text style={styles.cardTitle}>Financeiro</Text>
+        </View>
+        <View style={styles.cardContent}>
+          <FontAwesome5 name="hand-holding-usd" size={18} color="#4CAF50" />
+          <Text style={styles.cardText}>Faturamento Mensal: R${faturamentoMensal.toFixed(2)}</Text>
+        </View>
+        <View style={styles.cardContent}>
+          <FontAwesome5 name="piggy-bank" size={18} color="#4CAF50" />
+          <Text style={styles.cardText}>Lucro Mensal: R${lucroMensal.toFixed(2)}</Text>
+        </View>
       </View>
 
       {/* Botões de Ação */}
@@ -114,10 +155,15 @@ const styles = StyleSheet.create({
     fontWeight: "bold",
     color: "#4CAF50",
   },
+  cardContent: {
+    flexDirection: "row",
+    alignItems: "center",
+    marginVertical: 5,
+  },
   cardText: {
     fontSize: 16,
     color: "#333",
-    marginBottom: 5,
+    marginLeft: 10,
   },
   editButton: {
     flexDirection: "row",
