@@ -11,6 +11,7 @@ import Relatorios from './src/telas/Relatorios';
 import VizualizarPlantacoes from './src/telas/VizualizarPlantacoes';
 import VizualizarEstoque from './src/telas/VizualizarEstoque';
 import CadastroColheita from './src/telas/CadastroColheita';
+import PrevisaoTempo from './src/telas/PrevisaoTempo';
 
 const Stack = createStackNavigator();
 
@@ -76,6 +77,12 @@ const Navigation = () => {
         <Stack.Screen 
           name="CadastroColheita" 
           component={CadastroColheita} 
+          options={{ headerShown: false }} // Sem cabeçalho padrão
+        />
+        {/* TELA Previsão do tempo*/}
+        <Stack.Screen 
+          name="PrevisaoTempo" 
+          component={PrevisaoTempo} 
           options={{ headerShown: false }} // Sem cabeçalho padrão
         />
       </Stack.Navigator>
