@@ -14,12 +14,15 @@ export default function HomeScreen({ navigation }) {
 
           {/* Previsão do Tempo */}
           <View style={styles.weatherContainer}>
-            <Ionicons name="cloud" size={40} color="#4CAF50" />
-            <View style={styles.weatherDetails}>
-              <Text style={styles.weatherText}>Previsão: Ensolarado</Text>
-              <Text style={styles.weatherText}>Temperatura: 25°C</Text>
-              <Text style={styles.weatherText}>Próxima chuva em: 2 dias</Text>
-            </View>
+            <TouchableOpacity
+              onPress = {() => navigation.navigate("PrevisaoTempo")}>
+              <Ionicons name="cloud" size={40} color="#4CAF50" />
+              <View style={styles.weatherDetails}>
+                <Text style={styles.weatherText}>Previsão: Ensolarado</Text>
+                <Text style={styles.weatherText}>Temperatura: 25°C</Text>
+                <Text style={styles.weatherText}>Próxima chuva em: 2 dias</Text>
+              </View>
+            </TouchableOpacity>
           </View>
 
           {/* Resumo das Plantações e Lucro Total */}
